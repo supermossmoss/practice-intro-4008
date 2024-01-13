@@ -11,16 +11,16 @@ scalingButton.on('click', () => {
 const movingButton = $('#moving-button');
 
 movingButton.on('click', () => {
-  block.animate({ 'marginLeft': '500px' }, 500);
-  block.animate({ 'marginLeft': '20px' }, 1000);
+  block.animate({ marginLeft: '500px' }, 500);
+  block.animate({ marginLeft: '20px' }, 1000);
 });
 
 const loadavg = $('#loadavg');
 
 setInterval(() => {
   fetch('/server-status')
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       loadavg.text(data.loadavg.toString());
     });
-}, 10);
+}, 1000);
